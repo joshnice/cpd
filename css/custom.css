@@ -7,6 +7,28 @@
   margin-top:30%;
 }
 
+#button-add {
+  margin-top:10%;
+}
+
 .btn-row {
-  margin-bottom:30px;
+  margin-bottom:50px;
+}
+
+.input-name {
+  width:80% !important;
+  height:30px !important;
+  margin-left:10% !important;
+  margin-right:10% !important;
+}
+
+.sub-headings{
+  text-align:center;
+  margin-bottom:0px;
+  margin-top:15%;
+}
+
+.add-item-nav {
+  margin-right:10%;
+  margin-left:10%;
 }

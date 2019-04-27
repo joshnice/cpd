@@ -20,7 +20,7 @@
 
     <div data-role="page" id="menu">
   	  <div data-role="header">
-  		  <h1>Max the Money Saver</h1>
+  		  <h1>Max Money Saver</h1>
   	  </div>
 
     	  <div role="main" class="ui-content">
@@ -31,7 +31,7 @@
     		  <div class="cotainer-fluid" id="button-con">
             <div class="row btn-row">
               <div class="col-sm-4"></div>
-              <div class="col-sm-4 middle"><a href="#add-item"><button type="button" class="btn btn-secondary">Add Item</button></a></div>
+              <div class="col-sm-4 middle"><a href="#add-item"><button type="button" id="add-item-button" class="btn btn-secondary">Add Item</button></a></div>
               <div class="col-sm-4"></div>
             </div>
           </div>
@@ -51,7 +51,7 @@
     <div data-role="page" id="add-item">
 
         <div data-role="header">
-          <h1>Max the Money Saver</h1>
+          <h1>Max Money Saver</h1>
         </div>
 
         <div role="main" class="ui-content">
@@ -59,11 +59,55 @@
             <h5>Add Item</h5>
           </div>
 
-          <div class="container-fluid">
+          <div class="container-fluid" id="button-add">
+            <div class="row btn-row">
+              <div class="col-3"><h6 class="sub-headings">Type</h6></div>
+              <div class="col-9">
+                <form>
+                    <select name="select-native-1" id="select-native-1" data-mini="true">
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+                </form>
+              </div>
+            </div>
+            <div class="row btn-row">
+              <div class="col-3"><h6 class="sub-headings">Name</h6></div>
+              <div class="col-9"><input data-wrapper-class="input-name" type="text" name="Item Name"></div>
+            </div>
+            <div class="row btn-row">
+              <div class="col-3"><h6 class="sub-headings">Amount</h6></div>
+              <div class="col-9"><input data-wrapper-class="input-name" type="text" name="Item Name"></div>
+            </div>
+            <div class="row btn-row">
+              <div class="col-3"><h6 class="sub-headings">Category</h6></div>
+              <div class="col-9">
+                <form>
+                    <select name="select-native-1" id="select-native-1" data-mini="true">
+                        <option value="bill">Bills</option>
+                        <option value="pets">Pets</option>
+                        <option value="food">Food</option>
+                        <option value="going-out">Going Out</option>
+                        <option value="clothes">Clothes</option>
+                        <option value="subscriptions">Subscriptions</option>
+                        <option value="loan">Loan</option>
+                        <option value="job">Wage</option>
+                        <option value="other">Other</option>
+                    </select>
+                </form>
+              </div>
+            </div>
             <div class="row">
-              <div class="col-sm-1">mid left</div>
-              <div class="col-sm-1">mid right</div>
-              <div class="col-sm-10"></div>
+              <div class="col-2"></div>
+              <div class="col-8"><button type="button" class="btn btn-secondary">Add Geolocation</button></div>
+              <div class="col-2"></div>
+            </div>
+          </div>
+
+          <div class="container-fluid" style="margin-top: 20px;">
+            <div class="row">
+              <div class="col-6"><a href="#menu"><button type="button" id="menu-button" class="btn btn-secondary add-item-nav">Menu</button></a></div>
+              <div class="col-6"><button type="button" id="submit-item" class="btn btn-secondary add-item-nav">Submit</button></div>
             </div>
           </div>
       </div>
