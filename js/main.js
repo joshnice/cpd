@@ -6,7 +6,6 @@ var audioElement;
 
 function onDeviceReady() {
 	console.log("device ready");
-	console.log(cordova.file);
 	innit();
 }
 
@@ -52,12 +51,12 @@ function innit() {
 
 		for (var index = 0; index < unstring_items.length; index++)
 		{
-			//console.log(unstring_items[index].item_name);
-			document.getElementById("item-name-dis").innerHTML = unstring_items[index].item_name;
+			let name = unstring_items[index].item_name;
+			let amount = unstring_items[index].item_amount;
+			let cat = unstring_items[index].item_cat;
+			let type = unstring_items[index].item_type;
+			$( "#item-data" ).append(`<div class="row"><div class="col-3">${name}</div><div class="col-3">${amount}</div><div class="col-3">${cat}</div><div class="col-3">${type}</div></div>`);
 		}
-
-		//document.getElementById("item-name-dis").innerHTML = item_name;
-
 	});
 
 }
