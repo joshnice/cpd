@@ -40,11 +40,16 @@
             <div class="col-sm-4 middle"><a href="#trans"><button type="button" id="trans" class="btn btn-secondary">Transactions</button></a></div>
             <div class="col-sm-4"></div>
           </div>
-        <div class="row">
+        <div class="row btn-row">
           <div class="col-sm-4"></div>
           <div class="col-sm-4 middle"><a href="#budget"><button type="button" class="btn btn-secondary">Budget</button></a></div>
           <div class="col-sm-4"></div>
         </div>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 middle"><a href="#options"><button type="button" class="btn btn-secondary">Options</button></a></div>
+            <div class="col-sm-4"></div>
+          </div>
       </div>
     </div>
 
@@ -110,6 +115,7 @@
               <div class="col-6"><button type="button" id="submit-item" class="btn btn-secondary add-item-nav">Submit</button></div>
             </div>
           </div>
+  
       </div>
 
     </div>
@@ -132,7 +138,7 @@
             <div class="col-3"><h6>Type</h6></div>
           </div>
         </div>
-        
+
           <div class="container-fluid" style="margin-top: 20px;">
             <div class="row">
               <div class="col-6"><a href="#menu"><button type="button" id="menu-button" class="btn btn-secondary add-item-nav">Menu</button></a></div>
@@ -198,6 +204,27 @@
       </div>
     </div>
 
+    <div data-role="page" id="options">
+        <div data-role="header">
+          <h1>Max Money Saver</h1>
+        </div>
+
+      <div role="main" class="ui-content">
+          <div class="container-fluid">
+            <h5>Options</h5>
+          </div>
+          
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-6"><button type="button" id="clear-stor" class="btn btn-secondary add-item-nav">Clear</button></div>
+              <div class="col-6"><a href="#menu"><button type="button" id="menu-button" class="btn btn-secondary add-item-nav">Menu</button></a></div>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/jqm_defaults.js"></script>
@@ -205,12 +232,11 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <script src="js/highcharts.js"></script>
-    <script src="js/modules/no-data-to-display.js"></script>
-    <script src="js/themes/mypbtheme.js"></script>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
+    
 	</body>
 
 </html>
