@@ -37,7 +37,7 @@
           </div>
           <div class="row btn-row">
             <div class="col-sm-4"></div>
-            <div class="col-sm-4 middle"><a href="#trans"><button type="button" class="btn btn-secondary">Transactions</button></a></div>
+            <div class="col-sm-4 middle"><a href="#trans"><button type="button" id="trans" class="btn btn-secondary">Transactions</button></a></div>
             <div class="col-sm-4"></div>
           </div>
         <div class="row">
@@ -64,7 +64,7 @@
               <div class="col-3"><h6 class="sub-headings">Type</h6></div>
               <div class="col-9">
                 <form>
-                    <select name="select-native-1" id="select-native-1" data-mini="true">
+                    <select name="select-native-1" id="item-type" data-mini="true">
                         <option value="expense">Expense</option>
                         <option value="income">Income</option>
                     </select>
@@ -73,26 +73,26 @@
             </div>
             <div class="row btn-row">
               <div class="col-3"><h6 class="sub-headings">Name</h6></div>
-              <div class="col-9"><input data-wrapper-class="input-name" type="text" name="Item Name"></div>
+              <div class="col-9"><input data-wrapper-class="input-name" id="input-name-val" type="text" name="Item Name"></div>
             </div>
             <div class="row btn-row">
               <div class="col-3"><h6 class="sub-headings">Amount</h6></div>
-              <div class="col-9"><input data-wrapper-class="input-name" type="text" name="Item Name"></div>
+              <div class="col-9"><input data-wrapper-class="input-name" id="input-amount-val" type="text" name="Item Name"></div>
             </div>
             <div class="row btn-row">
               <div class="col-3"><h6 class="sub-headings">Category</h6></div>
               <div class="col-9">
                 <form>
-                    <select name="select-native-1" id="select-native-1" data-mini="true">
-                        <option value="bill">Bills</option>
-                        <option value="pets">Pets</option>
-                        <option value="food">Food</option>
-                        <option value="going-out">Going Out</option>
-                        <option value="clothes">Clothes</option>
-                        <option value="subscriptions">Subscriptions</option>
-                        <option value="loan">Loan</option>
-                        <option value="job">Wage</option>
-                        <option value="other">Other</option>
+                    <select name="select-native-1" id="item-cat" data-mini="true">
+                        <option value="Bills">Bills</option>
+                        <option value="Pets">Pets</option>
+                        <option value="Food">Food</option>
+                        <option value="Going Out">Going Out</option>
+                        <option value="Clothes">Clothes</option>
+                        <option value="Subscriptions">Subscriptions</option>
+                        <option value="Loan">Loan</option>
+                        <option value="Job">Wage</option>
+                        <option value="Other">Other</option>
                     </select>
                 </form>
               </div>
@@ -124,7 +124,17 @@
           <h5>Transactions</h5>
         </div>
 
+        <div class="container-fluid">
+          <p id="item-name-dis">Placeholder</p>
+          <p id="item_amount">Placeholder</p>
+        </div>
 
+        <div class="container-fluid" style="margin-top: 20px;">
+          <div class="row">
+            <div class="col-6"><a href="#menu"><button type="button" id="menu-button" class="btn btn-secondary add-item-nav">Menu</button></a></div>
+            <div class="col-6"><button type="button" id="submit-item" class="btn btn-secondary add-item-nav">Submit</button></div>
+          </div>
+        </div>
 
       </div>
     </div>
