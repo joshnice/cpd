@@ -32,3 +32,17 @@
   margin-right:10%;
   margin-left:10%;
 }
+
+#input-budget {
+  margin-top:30px;
+}
+
+#show-budget {
+  margin-top:40px;
+}
+
+.bot-rows {
+  margin-top:20px;
+  margin-bottom:20px;
+  text-align: center;
+}

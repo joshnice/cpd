@@ -123,6 +123,9 @@
         <div class="container-fluid">
           <h5>Transactions</h5>
         </div>
+
+
+
       </div>
     </div>
 
@@ -135,6 +138,49 @@
         <div class="container-fluid">
           <h5>Budget</h5>
         </div>
+
+        <div class="container-fluid" id="input-budget">
+          <div class="row">
+            <div class="col-3"><h6 class="sub-headings">Target</h6></div>
+            <div class="col-9"><input data-wrapper-class="input-target" type="text" name="Budget Target"></div>
+          </div>
+          <div class="row">
+            <div class="col-3"><h6 class="sub-headings">Starting</h6></div>
+            <div class="col-9"><input data-wrapper-class="input-starting" type="text" name="Starting Amount"></div>
+          </div>
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6"><button type="button" id="submit-budget" class="btn btn-secondary add-item-nav">Submit</button></div>
+            <div class="col-3"></div>
+          </div>
+        </div>
+
+        <div class="container-fluid" id="show-budget">
+          <div class="row bot-rows">
+            <div class="col-6"><h6>Target</h6></div>
+            <div class="col-6"><span id="target-value">Placeholder</span></div>
+          </div>
+          <div class="row bot-rows">
+            <div class="col-6"><h6">Starting</h6></div>
+            <div class="col-6"><span id="starting-value">Placeholder</span></div>
+          </div>
+          <div class="row bot-rows">
+            <div class="col-6"><h6>Current</h6></div>
+            <div class="col-6"><span id="current-value">Placeholder</span></div>
+          </div>
+          <div class="row bot-rows">
+            <div class="col-6"><h6>Net</h6></div>
+            <div class="col-6"><span id="net-value">Placeholder</span></div>
+          </div>
+        </div>
+
+        <div class="container-fluid" style="margin-top: 30px;">
+          <div class="row">
+            <div class="col-6"><a href="#menu"><button type="button" id="menu-button" class="btn btn-secondary add-item-nav">Menu</button></a></div>
+            <div class="col-6"><button type="button" id="submit-item" class="btn btn-secondary add-item-nav">Submit</button></div>
+          </div>
+        </div>
+
       </div>
     </div>
 
