@@ -42,7 +42,7 @@
           </div>
         <div class="row btn-row">
           <div class="col-sm-4"></div>
-          <div class="col-sm-4 middle"><a href="#budget"><button type="button" class="btn btn-secondary">Budget</button></a></div>
+          <div class="col-sm-4 middle"><a href="#budget"><button type="button" id="bud" class="btn btn-secondary">Budget</button></a></div>
           <div class="col-sm-4"></div>
         </div>
         <div class="row">
@@ -130,13 +130,16 @@
           <h5>Transactions</h5>
         </div>
 
-        <div class="container-fluid" id="item-data">
-          <div class="row">
-            <div class="col-3"><h6>Name</h6></div>
-            <div class="col-3"><h6>Amount</h6></div>
-            <div class="col-3"><h6>Category </h6></div>
-            <div class="col-3"><h6>Type</h6></div>
+        <div class="container-fluid" id="trans-headings">
+            <div class="row">
+              <div class="col-3"><h6>Name</h6></div>
+              <div class="col-3"><h6>Amount</h6></div>
+              <div class="col-3"><h6>Category </h6></div>
+              <div class="col-3"><h6>Type</h6></div>
+            </div>
           </div>
+
+        <div class="container-fluid" id="item-data">
         </div>
 
           <div class="container-fluid" style="margin-top: 20px;">
@@ -162,11 +165,11 @@
         <div class="container-fluid" id="input-budget">
           <div class="row">
             <div class="col-3"><h6 class="sub-headings">Target</h6></div>
-            <div class="col-9"><input data-wrapper-class="input-target" type="text" name="Budget Target"></div>
+            <div class="col-9"><input data-wrapper-class="input-target" id="input-target-val" type="text" name="Budget Target"></div>
           </div>
           <div class="row">
             <div class="col-3"><h6 class="sub-headings">Starting</h6></div>
-            <div class="col-9"><input data-wrapper-class="input-starting" type="text" name="Starting Amount"></div>
+            <div class="col-9"><input data-wrapper-class="input-starting" id="input-starting-val" type="text" name="Starting Amount"></div>
           </div>
           <div class="row">
             <div class="col-3"></div>
@@ -181,7 +184,7 @@
             <div class="col-6"><span id="target-value">Placeholder</span></div>
           </div>
           <div class="row bot-rows">
-            <div class="col-6"><h6">Starting</h6></div>
+            <div class="col-6"><h6>Starting</h6></div>
             <div class="col-6"><span id="starting-value">Placeholder</span></div>
           </div>
           <div class="row bot-rows">
@@ -236,7 +239,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
-    
+
 	</body>
 
 </html>
