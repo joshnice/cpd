@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css" />
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+
     <script type="text/javascript" src="js/cordova.js"></script>
 	</head>
 
@@ -106,7 +108,7 @@
             </div>
             <div class="row">
               <div class="col-2"></div>
-              <div class="col-8"><button type="button" class="btn btn-secondary">Add Geolocation</button></div>
+              <div class="col-8"><button type="button" id="add-geolocation" class="btn btn-secondary">Add Geolocation</button></div>
               <div class="col-2"></div>
             </div>
           </div>
@@ -149,7 +151,14 @@
               <div class="col-6"><a href="#menu"><button type="button" id="menu-button" class="btn btn-secondary add-item-nav">Menu</button></a></div>
               <div class="col-6"><button type="button" id="submit-item" class="btn btn-secondary add-item-nav">Submit</button></div>
             </div>
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6"><a href="#map"><button type="button" id="map-button" class="btn btn-secondary add-item-nav">Map</button></a></div>
+                <div class="col-3"></div>
+              </div>
           </div>
+
+
 
       </div>
     </div>
@@ -221,8 +230,8 @@
           
           <div class="container-fluid">
             <div class="row">
-              <div class="col-6"><button type="button" id="clear-stor" class="btn btn-secondary add-item-nav">Clear</button></div>
               <div class="col-6"><a href="#menu"><button type="button" id="menu-button" class="btn btn-secondary add-item-nav">Menu</button></a></div>
+              <div class="col-6"><button type="button" id="clear-stor" class="btn btn-secondary add-item-nav">Clear</button></div>
             </div>
           </div>
 
@@ -250,6 +259,30 @@
           </div>
 
       </div>
+    </div>
+
+      <div data-role="page" id="map">
+          <div data-role="header">
+            <h1>Max Money Saver</h1>
+          </div>
+    
+          <div role="main" class="ui-content">
+            <div class="container-fluid">
+              <h5>Map</h5>
+            </div>
+          </div>
+
+          <div id="mapid"></div>
+
+          <div class="container-fluid">
+              <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6"><a href="#budget"><button type="button" id="bud" class="btn btn-secondary add-item-nav">Back</button></a></div>          
+                <div class="col-3"></div>
+              </div>
+          </div>
+
+      </div>
 
     </div>
 
@@ -263,6 +296,7 @@
     
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
 
     <script type="text/javascript" src="js/main.js"></script>
 

@@ -1,6 +1,10 @@
 "use strict";
 
-var audioElement;
+let lat = 0;
+let longi = 0; 
+let marker_lat = [];
+let marker_longi = [];
+let marker_name = [];
 
 // add device and doc ready
 
@@ -16,6 +20,8 @@ $(document).ready(function () {
 
 
 function innit() {
+
+	get_current_loc();
 
 	$("#submit-item").click(function() {
 		console.log("add item button clicked");
@@ -45,7 +51,6 @@ function innit() {
 
 		document.getElementById("input-name-val").value = "";
 		document.getElementById("input-amount-val").value = "";
-		document.getElementById("item-type").value = "Expense";
 
 	});
 
@@ -277,5 +282,49 @@ function innit() {
 		}	
 		
 		return total_amount;
+	}
+
+	$("#add-geolocation").click(function() {
+		console.log("geo location clicked");
+
+		get_current_loc();
+		
+		marker_lat.push(lat);
+		marker_longi.push(longi);
+		marker_name.push($("#input-name-val").val());
+
+	});
+
+	$("#map-button").click(function(){
+		console.log("map button clicked");
+
+		get_current_loc();
+
+		var mymap = L.map('mapid').setView([lat,longi], 13);
+
+		for (var index = 0; index < marker_lat.length; index++)
+		{
+			var marker = L.marker([marker_lat[index], marker_longi[index]]).addTo(mymap);
+			marker.bindPopup(marker_name[index]);
+		}
+	
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			maxZoom: 18, id: 'mapbox.streets', accessToken: 'pk.eyJ1Ijoiam9zaG5pY2UiLCJhIjoiY2pwcjJvZGZ6MHk3bzQ4bzFrc2R3N283aSJ9.FPWF6miX465yiopxAPnhIw'}).addTo(mymap);
+	});
+
+	function get_current_loc() {
+		var onSuccess = function(position) {
+
+				  lat =  parseFloat(position.coords.latitude);
+				  longi = parseFloat(position.coords.longitude);
+		};
+	
+		function onError(error) {
+			alert('code: '    + error.code    + '\n' +
+				  'message: ' + error.message + '\n');
+		}
+
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 	}
 }
