@@ -43,8 +43,9 @@ function innit() {
 
 		swal("Good job!", "Item Submitted", "success");
 
-		document.getElementById('myInput').value = ' ';
-
+		document.getElementById("input-name-val").value = "";
+		document.getElementById("input-amount-val").value = "";
+		document.getElementById("item-type").value = "Expense";
 
 	});
 
@@ -113,15 +114,16 @@ function innit() {
 				let amount = unstring_items[index].item_amount;
 				let type = unstring_items[index].item_type;
 
+				amount = parseFloat(amount);
 				console.log("amount", amount);
 
-				if (type == "income")
+				if (type == "Income")
 				{
-					total += amount;
+					total = parseFloat(total + amount);
 				}
 				else 
 				{
-					total -= amount;
+					total = parseFloat(total - amount);
 				}
 
 				console.log("total", total);
@@ -133,9 +135,9 @@ function innit() {
 
 			let starting = localStorage.getItem("budget-starting");
 
-			starting = Number(starting);
+			starting = parseFloat(starting);
 
-			net = starting + total;
+			net = parseFloat(starting + total);
 			console.log(net);
 
 			document.getElementById("net-value").innerHTML = net;
