@@ -59,6 +59,7 @@
     <plugin name="cordova-plugin-console" />
     <plugin name="cordova-plugin-file" />
     <plugin name="cordova-plugin-geolocation" />
+    <plugin name="org.apache.cordova.geolocation" />
 
 
 
