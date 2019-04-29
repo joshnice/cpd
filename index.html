@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css" />
+
     <script type="text/javascript" src="js/cordova.js"></script>
 	</head>
 
@@ -200,7 +202,7 @@
         <div class="container-fluid" style="margin-top: 30px;">
           <div class="row">
             <div class="col-6"><a href="#menu"><button type="button" id="menu-button" class="btn btn-secondary add-item-nav">Menu</button></a></div>
-            <div class="col-6"><button type="button" id="submit-item" class="btn btn-secondary add-item-nav">Submit</button></div>
+            <div class="col-6"><a href="#graph"><button type="button" id="show-graph" class="btn btn-secondary add-item-nav">Graph</button></a></div>
           </div>
         </div>
 
@@ -228,6 +230,29 @@
 
     </div>
 
+    <div data-role="page" id="graph">
+      <div data-role="header">
+        <h1>Max Money Saver</h1>
+      </div>
+
+      <div role="main" class="ui-content">
+          <div class="container-fluid">
+            <h5>Graph</h5>
+          </div>
+
+          <canvas id="exvsin" width="400" height="400" style="margin-top:30px;"></canvas>
+
+          <div id="container-fluid" style="margin-top:50px;">
+            <div class="row">
+              <div class="col-6"><a href="#budget"><button type="button" id="bud" class="btn btn-secondary add-item-nav">Back</button></a></div>
+              <div class="col-6"><button type="button" id="change-graph" class="btn btn-secondary add-item-nav">Change</button></div>           
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/jqm_defaults.js"></script>
@@ -237,6 +262,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
 

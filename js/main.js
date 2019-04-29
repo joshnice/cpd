@@ -91,6 +91,22 @@ function innit() {
 
 	$("#bud").click(function() {
 		console.log("budget navi clicked");
+		setup_bud();
+
+	});
+
+	$("#submit-budget").click(function() {
+		console.log("submit budget clicked");
+
+		localStorage.setItem("budget-target", $("#input-target-val").val());
+		localStorage.setItem("budget-starting", $("#input-starting-val").val());
+
+		swal("Good job!", "Item Submitted", "success");
+
+		setup_bud();
+	});
+
+	function setup_bud() {
 		console.log(localStorage.getItem("budget-target"));
 		console.log(localStorage.getItem("budget-starting"));
 		
@@ -142,16 +158,124 @@ function innit() {
 
 			document.getElementById("net-value").innerHTML = net;
 		}
+	}
 
+	$("#show-graph").click(function(){
+
+		var ctx = document.getElementById('exvsin').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'pie',
+			data: {
+				labels: ['Expenses', 'Income'],
+				datasets: [{
+					label: 'Expenses vs Income',
+					data: [expenses(), income()],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.8)',
+						'rgba(54, 162, 255, 0.8)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				cutoutPercentage: 40
+			}
+		});
+
+		document.getElementById("exvsin").style.visibility = "visible";
 
 	});
 
-	$("#submit-budget").click(function() {
-		console.log("submit budget clicked");
+	function expenses() {
+		let unstring_items = JSON.parse(localStorage.getItem("items"));
 
-		localStorage.setItem("budget-target", $("#input-target-val").val());
-		localStorage.setItem("budget-starting", $("#input-starting-val").val());
+		let total_exp = 0;
+
+		for (var index = 0; index < unstring_items.length; index++)
+		{
+			let amount = parseFloat(unstring_items[index].item_amount);
+			let type = unstring_items[index].item_type;
+
+			if (type == "Expense")
+			{
+				total_exp += amount;
+			}
+		}
 		
+		return total_exp;
+	}
+
+	function income() {
+		let unstring_items = JSON.parse(localStorage.getItem("items"));
+
+		let total_inc = 0;
+		
+		for (var index = 0; index < unstring_items.length; index++)
+		{
+			let amount = parseFloat(unstring_items[index].item_amount);
+			let type = unstring_items[index].item_type;
+
+			if (type == "Income")
+			{
+				total_inc += amount;
+			}
+		}	
+		
+		return total_inc;
+	}
+
+	$("#change-graph").click(function() {
+		console.log("change graph button clicked");
+
+		var ctx = document.getElementById('exvsin').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'pie',
+			data: {
+				labels: ["Bills", "Food", "Pets", "Going Out", "Clothes", "Subscriptions"],
+				datasets: [{
+					label: 'Expense Categories',
+					data: [cat_sel(0), cat_sel(1), cat_sel(2), cat_sel(3), cat_sel(4), cat_sel(5), cat_sel(6)],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.8)',
+						'rgba(54, 162, 255, 0.8)',
+						'rgba(54, 255, 132, 0.8)',
+						'rgba(255, 162, 255, 0.8)',
+						'rgba(255, 255, 132, 0.8)',
+						'rgba(0, 255, 255, 0.8)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				cutoutPercentage: 40
+			}
+		});
 	});
 
+	function cat_sel(val) {
+		let cat_arr = [
+			"Bills",
+			"Food",
+			"Pets",
+			"Going Out",
+			"Clothes",
+			"Subscriptions"
+		]
+		let unstring_items = JSON.parse(localStorage.getItem("items"));
+
+		let total_amount = 0;
+		
+		for (var index = 0; index < unstring_items.length; index++)
+		{
+			let amount = parseFloat(unstring_items[index].item_amount);
+			let cat = unstring_items[index].item_cat;
+
+			if (cat == cat_arr[val])
+			{
+				total_amount += amount;
+			}
+		}	
+		
+		return total_amount;
+	}
 }
