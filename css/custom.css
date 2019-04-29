@@ -52,5 +52,8 @@
 }
 
 #mapid { 
-  height:300px;
+  height:500px;
+  width:90%;
+  margin-left:5%;
+  margin-right:5%;
  }
