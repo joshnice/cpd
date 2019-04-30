@@ -5,6 +5,7 @@ let longi = 0;
 let marker_lat = [];
 let marker_longi = [];
 let marker_name = [];
+var mymap;
 
 // add device and doc ready
 
@@ -47,7 +48,7 @@ function innit() {
 			localStorage.setItem("items",JSON.stringify(unstring_items));
 		}
 
-		swal("Good job!", "Item Submitted", "success");
+		swal("Success!", "Item Submitted", "success");
 
 		document.getElementById("input-name-val").value = "";
 		document.getElementById("input-amount-val").value = "";
@@ -106,7 +107,7 @@ function innit() {
 		localStorage.setItem("budget-target", $("#input-target-val").val());
 		localStorage.setItem("budget-starting", $("#input-starting-val").val());
 
-		swal("Good job!", "Item Submitted", "success");
+		swal("Success!", "Budget Submitted", "success");
 
 		setup_bud();
 	});
@@ -293,6 +294,9 @@ function innit() {
 		marker_longi.push(longi);
 		marker_name.push($("#input-name-val").val());
 
+		swal("Success!", "Location Added", "success");
+
+
 	});
 
 	$("#map-button").click(function(){
@@ -300,7 +304,7 @@ function innit() {
 
 		get_current_loc();
 
-		var mymap = L.map('mapid').setView([lat,longi], 13);
+		mymap = L.map('mapid', {trackReszie: false}).setView([lat,longi], 13);
 
 		for (var index = 0; index < marker_lat.length; index++)
 		{
@@ -310,14 +314,16 @@ function innit() {
 	
 		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-			maxZoom: 18, id: 'mapbox.streets', accessToken: 'pk.eyJ1Ijoiam9zaG5pY2UiLCJhIjoiY2pwcjJvZGZ6MHk3bzQ4bzFrc2R3N283aSJ9.FPWF6miX465yiopxAPnhIw'}).addTo(mymap);
+			maxZoom: 18, id: 'mapbox.streets', accessToken: 'pk.eyJ1Ijoiam9zaG5pY2UiLCJhIjoiY2pwcjJvZGZ6MHk3bzQ4bzFrc2R3N283aSJ9.FPWF6miX465yiopxAPnhIw'}).addTo(mymap);	
+			
+		setTimeout(function(){ mymap.invalidateSize()}, 500);
 	});
 
 	function get_current_loc() {
-		var onSuccess = function(position) {
-
-				  lat =  parseFloat(position.coords.latitude);
-				  longi = parseFloat(position.coords.longitude);
+		var onSuccess = function(position) 
+		{
+			lat =  parseFloat(position.coords.latitude);
+			longi = parseFloat(position.coords.longitude);
 		};
 	
 		function onError(error) {
