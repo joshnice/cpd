@@ -61,7 +61,7 @@
     <plugin name="cordova-plugin-geolocation" />
     <plugin name="org.apache.cordova.geolocation" />
 
-    <plugin name ="cordova-plugin-geolocation --variable GEOLOCATION_USAGE_DESCRIPTION='my_project would like to use your location' />
+    <plugin name ="cordova-plugin-geolocation --variable GEOLOCATION_USAGE_DESCRIPTION='my_project would like to use your location'" />
 
 
 
