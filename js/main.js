@@ -95,7 +95,7 @@ function innit() {
 
 
 	$("#bud").click(function() {
-		console.log("budget navi clicked");
+		console.log("bud navi clicked");
 		setup_bud();
 
 	});
