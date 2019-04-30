@@ -6,7 +6,7 @@
     version     = "1.0.0" >
 
     <!-- versionCode is optional and Android only -->
-    <name>Josh's App of the North</name>
+    <name>Max Money Save</name>
     <description>
         CPD application
     </description>
@@ -75,7 +75,7 @@
 
 
 	<!--//these are generic not good enough for a live build - you will nedd to be os and device specific (android can use 9 slice png)-->
-	<icon src="icon.png" />
+	<icon src="iassets/icons/android/mipmap-xxxhdpi/ic_launcher.png" />
 
 	<splash src="splash.png" />
 	<platform name="ios">
