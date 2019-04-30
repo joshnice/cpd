@@ -134,12 +134,13 @@
 </platform>
 <splash src="splash.png" />
 
-<icon platform="android" qualifier="ldpi" src="assets/icons/android/icon-36-ldpi.png"/>
-<icon platform="android" qualifier="mdpi" src="assets/icons/android/icon-48-mdpi.png"/>
-<icon platform="android" qualifier="hdpi" src="assets/icons/android/icon-72-hdpi.png"/>
-<icon platform="android" qualifier="xhdpi" src="assets/icons/android/icon-96-xhdpi.png"/>
-<icon platform="android" qualifier="xxhdpi" src="assets/icons/android/icon-144-xxhdpi.png"/>
-<icon platform="android" qualifier="xxxhdpi" src="assets/icons/android/icon-192-xxxhdpi.png"/>
+
+<icon platform="android" qualifier="ldpi" src="assets/icons/android/mipmap-ldpi/ic_launcher.png"/>
+<icon platform="android" qualifier="mdpi" src="assets/icons/android/mipmap-mdpi/ic_launcher.png"/>
+<icon platform="android" qualifier="hdpi" src="assets/icons/android/mipmap-hdpi/ic_launcher.png"/>
+<icon platform="android" qualifier="xhdpi" src="assets/icons/android/mipmap-xhdpi/ic_launcher.png"/>
+<icon platform="android" qualifier="xxhdpi" src="assets/icons/android/mipmap-xxhdpi/ic_launcher.png"/>
+<icon platform="android" qualifier="xxxhdpi" src="assets/icons/android/mipmap-xxxhdpi/ic_launcher.png"/>
 
 <splash platform="android" qualifier="ldpi" src="assets/splash/android/screen-ldpi-portrait.png" />
 <splash platform="android" qualifier="mdpi" src="assets/splash/android/screen-mdpi-portrait.png" />
