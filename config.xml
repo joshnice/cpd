@@ -58,10 +58,12 @@
 
     <plugin name="cordova-plugin-console" />
     <plugin name="cordova-plugin-file" />
+    <plugin name="cordova-plugin-geolocation" />
     <plugin name="org.apache.cordova.geolocation" />
-    <plugin name ="cordova-plugin-geolocation --variable GEOLOCATION_USAGE_DESCRIPTION='my_project would like to use your location'" />
 
-
+    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+        <string>need location access to find things nearby</string>
+    </edit-config>
 
     <!-- Third party plugins -->
     <!-- A list of available plugins are available at https://build.phonegap.com/plugins
